@@ -16,3 +16,7 @@ let year = current.getFullYear();
 let h3Day = document.querySelector("#current-day");
 h3Day.innerHTML = `${days[current.getDay()]}, ${day} ${month} ${year}`;
 
+let minute = current.getMinutes();
+let hours = current.getHours();
+let h3Time = document.querySelector("#current-time");
+h3Time.innerHTML = `${hours}:${minute}`;
