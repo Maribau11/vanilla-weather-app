@@ -12,3 +12,14 @@
     width: 15%;
     border-color: aqua;
 }
+#city-name{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+#current-day{
+    padding-left: 2cm;
+}
+#current-time{
+    text-align: right;
+    padding-right: 55px;
+}
