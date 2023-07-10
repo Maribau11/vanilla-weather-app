@@ -12,6 +12,7 @@ let days = [
 ];
 let day = current.getDate();
 let month = months[current.getMonth()];
+let year = current.getFullYear();
 let h3Day = document.querySelector("#current-day");
-h3Day.innerHTML = `${days[current.getDay()]}, ${day} ${month}`;
+h3Day.innerHTML = `${days[current.getDay()]}, ${day} ${month} ${year}`;
 
