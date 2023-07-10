@@ -1,4 +1,14 @@
-h1{
-    text-align: center;
-    color: blue;
+#input-city{
+    width: 75%;
+    border-radius: 35px;
+    padding: 10px;
+    margin: 20px;
+    border-color: aqua;
+}
+#btn-search{
+    border-radius: 35px;
+    background-color:transparent;
+    color: black;
+    width: 15%;
+    border-color: aqua;
 }
