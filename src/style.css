@@ -4,6 +4,8 @@
     padding: 10px;
     margin: 20px;
     border-color: aqua;
+    background-color: transparent;
+    
 }
 #btn-search{
     border-radius: 35px;
