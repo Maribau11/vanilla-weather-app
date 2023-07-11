@@ -1,3 +1,4 @@
+
 #input-city{
     width: 75%;
     border-radius: 35px;
@@ -17,18 +18,28 @@
 #city-name{
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
 #current-day{
     padding-left: 2cm;
+    color: white;
 }
 #current-time{
     text-align: right;
     padding-right: 55px;
+    color: white;
 }
-
+#current-temp{
+    color: white;
+}
 #weather-info{
     list-style: none;
     font-size: 12px;
     text-align: left;
     padding-left: 90px;
+    color: white;
+}
+#todays-info, #forcast{
+    background: transparent;
+    color: white;
 }
