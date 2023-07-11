@@ -85,7 +85,13 @@ function getWeather(response) {
   }
   div.appendChild(img);
 }
+function getForecast(response){
+    console.log(response.data);
+}
 let apiKey = "85bbd3d16a2dfe0ecf253c7ae1e8fe03";
 let city = "Cape Town"
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(`${apiUrl}`).then(getWeather);
+let currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(`${currentUrl}`).then(getWeather);
+
+let forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=${apiKey}`;
+axios.get(forecastUrl).then(getForecast);
