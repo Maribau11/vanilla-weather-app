@@ -1,4 +1,7 @@
 
+.weather-app{
+    max-width: 600px;
+}
 #input-city{
     width: 75%;
     border-radius: 35px;
@@ -21,25 +24,31 @@
     color: white;
 }
 #current-day{
-    padding-left: 2cm;
+    padding-left: 35px;
     color: white;
 }
 #current-time{
     text-align: right;
-    padding-right: 55px;
+    padding-right: 110px;
     color: white;
 }
 #current-temp{
     color: white;
+    padding-top: 25px;
+    font-size: 50px;
 }
 #weather-info{
     list-style: none;
     font-size: 12px;
     text-align: left;
-    padding-left: 90px;
+    padding-left: -20px;
+    padding-top: 25px;
     color: white;
 }
-#todays-info, #forcast{
+#todays-info{
     background: transparent;
     color: white;
+}
+.group-btn{
+    font-size: 10px;
 }
