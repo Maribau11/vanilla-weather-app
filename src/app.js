@@ -12,9 +12,8 @@ let days = [
 ];
 let day = current.getDate();
 let month = months[current.getMonth()];
-let year = current.getFullYear();
 let h3Day = document.querySelector("#current-day");
-h3Day.innerHTML = `${days[current.getDay()]}, ${day} ${month} ${year}`;
+h3Day.innerHTML = `${days[current.getDay()]}, ${day} ${month}`;
 
 let minute = current.getMinutes();
 let hours = current.getHours();
@@ -45,53 +44,42 @@ function getWeather(response) {
 
   let icon = response.data.weather[0].icon;
   const div = document.querySelector("#weather-icon");
-  const body = document.querySelector("body");const img = document.createElement("img");
+  const img = document.createElement("img");
+  const div2 = document.querySelector(".weather-app");
   if (icon == "01d") {
     img.setAttribute("src", "media/icon/sunny.png");
-    document.body.style.backgroundImage = "url('media/background/sunnyDay.jpg')";
+    div2.style.backgroundImage = "url('media/background/sunnyDay.jpg')";
     
   } else if (icon == "02d") {
     img.setAttribute("src", "media/icon/sunny-cloud.png");
-    document.body.style.backgroundImage =
-      "url('media/background/cloudyDay.jpg')";
+    div2.style.backgroundImage = "url('media/background/cloudyDay.jpg')";
   } else if (icon == "03d") {
     img.setAttribute("src", "media/icon/cloud.png");
-    document.body.style.backgroundImage =
-      "url('media/background/partlyCloudyDay.jpg')";
+    div2.style.backgroundImage = "url('media/background/partlyCloudyDay.jpg')";
   } else if (icon == "04d") {
     img.setAttribute("src", "media/icon/partialy-cloudy.png");
-    document.body.style.backgroundImage =
-      "url('media/background/partlyCloudyDay.jpg')";
+    div2.style.backgroundImage = "url('media/background/partlyCloudyDay.jpg')";
   } else if (icon == "09d") {
     img.setAttribute("src", "media/icon/light-rain.png");
-    document.body.style.backgroundImage =
-      "url('media/background/rainyDay.jpg')";
+    div2.style.backgroundImage = "url('media/background/rainyDay.jpg')";
   } else if (icon == "10d") {
     img.setAttribute("src", "media/icon/heavy-rain.png");
-    document.body.style.backgroundImage =
-      "url('media/background/rainyDay.jpg')";
+    div2.style.backgroundImage = "url('media/background/rainyDay.jpg')";
   } else if (icon == "11d") {
     img.setAttribute("src", "media/icon/thunder.png");
-    document.body.style.backgroundImage =
-      "url('media/background/thunderDay.jpg')";
+    div2.style.backgroundImage = "url('media/background/thunderDay.jpg')";
   } else if (icon == "13d") {
     img.setAttribute("src", "media/icon/snow.png");
-    document.body.style.backgroundImage =
-      "url('media/background/snowyDay.jpg')";
+    div2.style.backgroundImage = "url('media/background/snowyDay.jpg')";
   } else if (icon == "50d") {
     img.setAttribute("src", "media/icon/mist.png");
-    document.body.style.backgroundImage =
-      "url('media/background/mistyDay.jpg')";
+    div2.style.backgroundImage = "url('media/background/mistyDay.jpg')";
   }
   div.appendChild(img);
 }
-function getForecast(response){
-    console.log(response.data);
-}
+
 let apiKey = "85bbd3d16a2dfe0ecf253c7ae1e8fe03";
 let city = "Cape Town"
 let currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(`${currentUrl}`).then(getWeather);
 
-let forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=${apiKey}`;
-axios.get(forecastUrl).then(getForecast);
