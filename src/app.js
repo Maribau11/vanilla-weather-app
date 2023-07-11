@@ -45,45 +45,45 @@ function getWeather(response) {
 
   let icon = response.data.weather[0].icon;
   const div = document.querySelector("#weather-icon");
-  const body = document.querySelector("body");
-  const img = document.createElement("img");
-  const bkImg = document.createElement('bkImg');
+  const body = document.querySelector("body");const img = document.createElement("img");
   if (icon == "01d") {
     img.setAttribute("src", "media/icon/sunny.png");
     document.body.style.backgroundImage = "url('media/background/sunnyDay.jpg')";
     
   } else if (icon == "02d") {
     img.setAttribute("src", "media/icon/sunny-cloud.png");
-    bkImg.setAttribute("src", "media/background/cloudyDay");
+    document.body.style.backgroundImage =
+      "url('media/background/cloudyDay.jpg')";
   } else if (icon == "03d") {
     img.setAttribute("src", "media/icon/cloud.png");
-    bkImg.setAttribute("src", "media/background/partlyCloudyDay");
+    document.body.style.backgroundImage =
+      "url('media/background/partlyCloudyDay.jpg')";
   } else if (icon == "04d") {
     img.setAttribute("src", "media/icon/partialy-cloudy.png");
-    bkImg.setAttribute("src", "media/background/partlyCloudyDay");
-    
+    document.body.style.backgroundImage =
+      "url('media/background/partlyCloudyDay.jpg')";
   } else if (icon == "09d") {
     img.setAttribute("src", "media/icon/light-rain.png");
-    bkImg.setAttribute("src", "media/background/rainyDay");
-    
+    document.body.style.backgroundImage =
+      "url('media/background/rainyDay.jpg')";
   } else if (icon == "10d") {
     img.setAttribute("src", "media/icon/heavy-rain.png");
-    bkImg.setAttribute("src", "media/background/rainyDay");
-
+    document.body.style.backgroundImage =
+      "url('media/background/rainyDay.jpg')";
   } else if (icon == "11d") {
     img.setAttribute("src", "media/icon/thunder.png");
-    bkImg.setAttribute("src", "media/background/thunderDay");
-    
+    document.body.style.backgroundImage =
+      "url('media/background/thunderDay.jpg')";
   } else if (icon == "13d") {
     img.setAttribute("src", "media/icon/snow.png");
-    bkImg.setAttribute("src", "media/background/snowyDay");
-    
+    document.body.style.backgroundImage =
+      "url('media/background/snowyDay.jpg')";
   } else if (icon == "50d") {
     img.setAttribute("src", "media/icon/mist.png");
-    bkImg.setAttribute("src", "media/background/mistyDay");
+    document.body.style.backgroundImage =
+      "url('media/background/mistyDay.jpg')";
   }
   div.appendChild(img);
-  body.appendChild
 }
 let apiKey = "85bbd3d16a2dfe0ecf253c7ae1e8fe03";
 let city = "Cape Town"
