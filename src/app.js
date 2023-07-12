@@ -31,7 +31,8 @@ function getWeather(response) {
     //Change the city name
     /************************************************************/
     let cityName = document.querySelector("#city-name");
-    cityName.innerHTML = response.data.name;
+    //let name = response.data.name;
+    cityName.innerHTML = response.data.name.toUpperCase();
     // gets current temp and displays it
     /***********************************************************/
     let currentTemp = Math.round(response.data.main.temp);
@@ -65,32 +66,35 @@ function getWeather(response) {
     const div2 = document.querySelector(".weather-app");
   
     if (icon == "01d") {
-      image.src="media/icon/sunny.png";
-      div2.style.backgroundImage = "url('media/background/sunnyDay.jpg')";  
+      image.src = "src/media/icon/sunny.png";
+      div2.style.backgroundImage = "url('src/media/background/sunnyDay.jpg')";  
     } else if (icon == "02d") {
-      image.src="media/icon/sunny-cloud.png";
-      div2.style.backgroundImage = "url('media/background/scatteredCloudDay.jpg')";
+      image.src = "src/media/icon/sunny-cloud.png";
+      div2.style.backgroundImage =
+        "url('src/media/background/scatteredCloudDay.jpg')";
     } else if (icon == "03d") {
-      image.src="media/icon/cloudy.png";
-      div2.style.backgroundImage = "url('media/background/partlyCloudyDay.jpg')";
+      image.src = "src/media/icon/cloudy.png";
+      div2.style.backgroundImage =
+        "url('src/media/background/partlyCloudyDay.jpg')";
     } else if (icon == "04d") {
-      image.src="media/icon/partly-cloudy.png";
-      div2.style.backgroundImage = "url('media/background/partlyCloudyDay.jpg')";
+      image.src = "src/media/icon/partly-cloudy.png";
+      div2.style.backgroundImage =
+        "url('src/media/background/partlyCloudyDay.jpg')";
     } else if (icon == "09d") {
-      image.src="media/icon/light-rain.png";
-      div2.style.backgroundImage = "url('media/background/rainyDay.jpg')";
+      image.src = "src/media/icon/light-rain.png";
+      div2.style.backgroundImage = "url('src/media/background/rainyDay.jpg')";
     } else if (icon == "10d") {
-      image.src="media/icon/heavy-rain.png";
-      div2.style.backgroundImage = "url('media/background/rainyDay.jpg')";
+      image.src = "src/media/icon/heavy-rain.png";
+      div2.style.backgroundImage = "url('src/media/background/rainyDay.jpg')";
     } else if (icon == "11d") {
-      image.src="media/icon/thunder.png";
-      div2.style.backgroundImage = "url('media/background/thunderDay.jpg')";
+      image.src = "src/media/icon/thunder.png";
+      div2.style.backgroundImage = "url('src/media/background/thunderDay.jpg')";
     } else if (icon == "13d") {
-      image.src="media/icon/snow.png";
-      div2.style.backgroundImage = "url('media/background/snowyDay.jpg')";
+      image.src = "src/media/icon/snow.png";
+      div2.style.backgroundImage = "url('src/media/background/snowyDay.jpg')";
     } else if (icon == "50d") {
-      image.src="media/icon/mist.png";
-      div2.style.backgroundImage = "url('media/background/mistyDay.jpg')";
+      image.src = "src/media/icon/mist.png";
+      div2.style.backgroundImage = "url('src/media/background/mistyDay.jpg')";
     }
     /*****************************************************************/
   }
