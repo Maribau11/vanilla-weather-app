@@ -1,6 +1,8 @@
 
 .weather-app{
-    max-width: 600px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 70px;
 }
 #input-city{
     width: 75%;

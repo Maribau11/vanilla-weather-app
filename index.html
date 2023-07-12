@@ -12,51 +12,62 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <title>Vanilla Weather App</title>
 </head>
-<body class="text-reset>
+<body>
     <div class="container">
-        <input type="text" placeholder="Search a city" id="input-city" style="color: white;">
-        <button type="button" class="btn btn-primary" id="btn-search">Search</button>
-        <h1 id="city-name">CAPE TOWN</h1>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <h3 id="current-day">
-                    Thursday, 10 July
-                </h3>
+        <div class="weather-app">
+            <input type="text" placeholder="Search a city" id="input-city" style="color: white;">
+            <button type="button" class="btn btn-primary" id="btn-search">Search</button>
+            <h1 id="city-name">CAPE TOWN</h1>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h3 id="current-day">
+                        Thursday, 10 July
+                    </h3>
+                </div>
+                <div class="col">
+                    <h3 id="current-time">TIME</h3>
+                </div>
             </div>
-            <div class="col">
-                <h3 id="current-time">TIME</h3>
-            </div>
-        </div>
-        <hr>
-        <div class="card" id="todays-info">
-             <div class="card-body">
-                 <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <h3 id="current-temp">Temperature in degrees</h3>
-                            <div class="btn-group" id="btn-degrees">
-                                <a href="#" class="btn btn-primary active" aria-current="page">°C</a>
-                                <a href="#" class="btn btn-primary">°F</a>
+            <hr>
+            <div class="card" id="todays-info">
+                <div class="card-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col">
+                                <h3>
+                                    <span id="current-temp">
+
+                                    </span>
+                                    <span id="symbol">
+                                        °C
+                                    </span>
+                                
+                                </h3>
+                                <div class="btn-group" id="btn-degrees">
+                                    <a href="#" class="btn btn-primary active" aria-current="page" id="cel-link">°C</a>
+                                    <a href="#" class="btn btn-primary" id="fah-link">°F</a>
+                                </div>
                             </div>
-                        </div>
-                         <div class="col" id="weather-icon">
-                            
-                        </div>
-                        <div class="col">
-                            <ul id="weather-info">
-                                <li id="hum">HUMIDITY</li>
-                                <li id="wind">WINDSPEED</li>
-                                <li id="hi">HIGH</li>
-                                <li id="low">LOW</li>
-                            </ul>
+                            <div class="col" id="weather-icon">
+                                <img src="#" alt="" id="icon">
+                            </div>
+                            <div class="col">
+                                <ul id="weather-info">
+                                    <li id="hum">HUMIDITY</li>
+                                    <li id="wind">WINDSPEED</li>
+                                    <li id="hi">HIGH</li>
+                                    <li id="low">LOW</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-             </div>
+            </div>
+            <br>
         </div>
-        <br>
-    </div>
+        </div>
+        
     </div>
     <script src="src/app.js"></script>
 </body>
