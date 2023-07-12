@@ -1,4 +1,7 @@
 
+body{
+    background-color: blueviolet;
+}
 .weather-app{
     max-width: 1000px;
     margin: 0 auto;

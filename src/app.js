@@ -134,6 +134,11 @@ function displayCel(event){
 }
 let btnSearch = document.querySelector("#btn-search");
 btnSearch.addEventListener("click",searchCity);
+document.querySelector("#input-city").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    searchCity();
+  }
+});
 let apiKey = "85bbd3d16a2dfe0ecf253c7ae1e8fe03";
 let city = "Cape Town"
 let currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
