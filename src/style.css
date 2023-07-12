@@ -12,33 +12,33 @@ body{
     border-radius: 35px;
     padding: 10px;
     margin: 20px;
-    border-color: aqua;
+    border-color: white;
     background-color: transparent;
     
 }
 #btn-search{
     border-radius: 35px;
     background-color:transparent;
-    color: white;
+    color: grey;
     width: 15%;
     border-color: aqua;
 }
 #city-name{
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    color: white;
+    color: grey;
 }
 #current-day{
     padding-left: 35px;
-    color: white;
+    color: grey;
 }
 #current-time{
     text-align: right;
     padding-right: 110px;
-    color: white;
+    color: grey;
 }
 #current-temp{
-    color: white;
+    color: grey;
     padding-top: 25px;
     font-size: 50px;
 }
@@ -48,11 +48,11 @@ body{
     text-align: left;
     padding-left: -20px;
     padding-top: 25px;
-    color: white;
+    color: grey;
 }
 #todays-info{
     background: transparent;
-    color: white;
+    color: grey;
 }
 .group-btn{
     font-size: 10px;
