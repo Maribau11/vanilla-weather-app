@@ -1,11 +1,13 @@
 
-body{
-    background-color: blueviolet;
-}
 .weather-app{
     max-width: 1000px;
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 70px;   
+}
+.forecast{
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 70px; 
 }
 #input-city{
     width: 75%;
@@ -19,14 +21,14 @@ body{
 #btn-search{
     border-radius: 35px;
     background-color:transparent;
-    color: grey;
+    color: white;
     width: 15%;
     border-color: aqua;
 }
 #city-name{
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    color: grey;
+    color: white;
 }
 #current-day{
     padding-left: 35px;
@@ -61,4 +63,19 @@ body{
     text-align: center;
     color: hotpink;
     text-decoration: none;
+}
+.forecast-days{
+    font-size: 12px;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#day-1-temp, #day-2-temp, #day-3-temp, #day-4-temp, #day-5-temp, #day-6-temp, #day-7-temp{
+    font-size: 10px;
+    text-align: center;
+}
+#day1-icon,#day2-icon,#day3-icon,#day4-icon,#day5-icon,#day6-icon,#day7-icon{
+    display: block;
+    margin: 0 auto;
+    width: 35px;
 }

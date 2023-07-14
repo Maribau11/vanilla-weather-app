@@ -76,11 +76,15 @@ function weatherInfo(response){
    highTemp.innerHTML = `<strong>High</strong>: ${currentHighTemp}°C`;
    lowTemp.innerHTML = `<strong>Low</strong>: ${currentLowTemp}°C`;
 }
+function changeTextColor(elem){
+elem.style.color= "white";
+}
 function changeIcons(response){
   /**** FUNCTION CHANGES THE ICON AND BACKGROUND ACCORDING TO THE WEATHER *******/
   let icon = response.data.weather[0].icon;
   const image = document.querySelector("#icon");
   const div2 = document.querySelector(".weather-app");
+  const text = Document.querySelector("")
 
   if (icon == "01d") {
     image.src = "src/media/icon/sunny.png";
