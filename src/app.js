@@ -53,6 +53,28 @@ function getCityName(response){
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name.toUpperCase();
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHtml = '<div class="row">';
+  let days = ["Thurs", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+            <div class="col-2">
+                <div class="date">${day}</div>
+                <img src="img1.png" alt="" width="42">
+                <div class="forecast-temp">
+                    <span class="max-temp">18°C</span> <span class="min-temp">12°C</span>
+                </div>
+            </div>`;
+  });
+
+  forecastHtml = forecastHtml + `</div>`;
+
+  forecastElement.innerHTML = forecastHtml;
+}
 function getCurrentTemp(response){
   /******* FUNCTION RETURNS THE CURRENT TEMPERATURE *************/
   let currentTemp = Math.round(response.data.main.temp);
@@ -168,6 +190,7 @@ let celsiusLink = document.querySelector("#cel-link");
 
 getDay();
 getTime();
+displayForecast();
 btnSearch.addEventListener("click", searchCity);
 document
   .querySelector("#input-city")
