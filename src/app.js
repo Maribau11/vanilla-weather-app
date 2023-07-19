@@ -84,7 +84,7 @@ function changeIcons(response){
   let icon = response.data.weather[0].icon;
   const image = document.querySelector("#icon");
   const div2 = document.querySelector(".weather-app");
-  const text = Document.querySelector("")
+ // const text = document.querySelector("")
 
   if (icon == "01d") {
     image.src = "src/media/icon/sunny.png";
