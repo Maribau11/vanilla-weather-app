@@ -53,7 +53,8 @@ function getCityName(response){
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name.toUpperCase();
 }
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHtml = '<div class="row">';
@@ -75,11 +76,18 @@ function displayForecast() {
 
   forecastElement.innerHTML = forecastHtml;
 }
+
+function getForecast(coordinates){
+  let key = "9df4ed10d34b5afafe2b748364cb2t0o";
+  let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${key}`;
+  axios.get(forecastUrl).then(displayForecast);
+}
 function getCurrentTemp(response){
   /******* FUNCTION RETURNS THE CURRENT TEMPERATURE *************/
   let currentTemp = Math.round(response.data.main.temp);
   let h3Temp = document.querySelector("#current-temp");
   h3Temp.innerHTML = `${currentTemp}`;
+  getForecast(response.data.coord);
 }
 function weatherInfo(response){
   /****** FUNCTION RETURNS THE WEATHER INFORMATION ****/
@@ -97,6 +105,7 @@ function weatherInfo(response){
    humidity.innerHTML = `<strong>Humidy</strong>: ${currentHumidity}%`;
    highTemp.innerHTML = `<strong>High</strong>: ${currentHighTemp}°C`;
    lowTemp.innerHTML = `<strong>Low</strong>: ${currentLowTemp}°C`;
+
 }
 function changeTextColor(elem){
 elem.style.color= "white";
@@ -184,13 +193,13 @@ let btnSearch = document.querySelector("#btn-search");
 let apiKey = "85bbd3d16a2dfe0ecf253c7ae1e8fe03";
 let city = "Cape Town";
 let currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+//let forecastUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 let fahrenheitLink = document.querySelector("#fah-link");
 let celsiusLink = document.querySelector("#cel-link");
 
 
 getDay();
 getTime();
-displayForecast();
 btnSearch.addEventListener("click", searchCity);
 document
   .querySelector("#input-city")
