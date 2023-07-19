@@ -48,26 +48,41 @@ function getTime() {
     }
   }
 }
+function formatForecastDay(timestamp){
+  let date = new Date(timestamp * 1000);
+ let days = [
+   "Sunday",
+   "Monday",
+   "Tuesday",
+   "Wednesday",
+   "Thursday",
+   "Friday",
+   "Saturday",
+ ]; 
+  let day = days[date.getDay()];
+
+  return day;
+
+}
 function getCityName(response){
   /******* FUNCTION RETURNS THE NAME OF THE CITY **************/
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name.toUpperCase();
 }
 function displayForecast(response) {
-  console.log(response.data);
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-
   let forecastHtml = '<div class="row">';
-  let days = ["Thurs", "Fri", "Sat"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forcastDay) {
     forecastHtml =
       forecastHtml +
       `
-            <div class="col-2">
-                <div class="date">${day}</div>
-                <img src="img1.png" alt="" width="42">
+            <div class="col">
+                <div class="date">${formatForecastDay(forcastDay.time)}</div>
+                <img src="${forcastDay.condition.icon_url}" alt="" width="42">
                 <div class="forecast-temp">
-                    <span class="max-temp">18°C</span> <span class="min-temp">12°C</span>
+                    <span class="max-temp">${Math.round(forcastDay.temperature.maximum)}°C</span> <span class="min-temp">${Math.round(forcastDay.temperature.minimum)}°C</span>
                 </div>
             </div>`;
   });
