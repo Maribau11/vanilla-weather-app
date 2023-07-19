@@ -20,6 +20,10 @@
 }
 .min-temp{
     opacity: 0.5;
+    color: white;
+}
+.max-temp{
+    color: white;
 }
 #input-city{
     width: 75%;
