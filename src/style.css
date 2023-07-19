@@ -39,7 +39,7 @@
     background-color:transparent;
     color: white;
     width: 15%;
-    border-color: aqua;
+    border-color: white;
 }
 #city-name{
     text-align: center;
@@ -48,15 +48,15 @@
 }
 #current-day{
     padding-left: 35px;
-    color: grey;
+    color: white;
 }
 #current-time{
     text-align: right;
     padding-right: 110px;
-    color: grey;
+    color: white;
 }
 #current-temp{
-    color: grey;
+    color: white;
     padding-top: 25px;
     font-size: 50px;
 }
@@ -66,11 +66,11 @@
     text-align: left;
     padding-left: -20px;
     padding-top: 25px;
-    color: grey;
+    color: white;
 }
 #todays-info{
     background: transparent;
-    color: grey;
+    color: white;
 }
 .group-btn{
     font-size: 10px;
