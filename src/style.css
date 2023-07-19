@@ -2,7 +2,8 @@
 .weather-app{
     max-width: 1000px;
     margin: 0 auto;
-    margin-top: 70px;   
+    margin-top: 70px;  
+    padding-bottom: 10px; 
 }
 .weather-forecast{
     margin-top: 20px;
