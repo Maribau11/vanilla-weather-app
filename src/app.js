@@ -110,9 +110,11 @@ function getForecast(coordinates){
 }
 function getCurrentTemp(response){
   /******* FUNCTION RETURNS THE CURRENT TEMPERATURE *************/
-  let currentTemp = Math.round(response.data.main.temp);
+  celsiusTemp = Math.round(response.data.main.temp);
   let h3Temp = document.querySelector("#current-temp");
-  h3Temp.innerHTML = `${currentTemp}`;
+  let tempSymbol = document.querySelector("#symbol");
+  h3Temp.innerHTML = `${celsiusTemp}`;
+  tempSymbol.innerHTML = "°C";
   getForecast(response.data.coord);
 }
 function weatherInfo(response){
@@ -177,6 +179,8 @@ function changeIcons(response){
 }
 
 function getWeather(response) {
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   getCityName(response);
   getCurrentTemp(response);
   weatherInfo(response);
@@ -205,15 +209,13 @@ function displayFah(event) {
   tempSymbol.innerHTML = "°F";
 }
 function displayCel(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let tempElement = document.querySelector("#current-temp");
-  let tempSymbol = document.querySelector("#symbol");
-  let fahrenheitTemp = tempElement.textContent;
-  let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
-  tempElement.innerHTML = Math.round(celsiusTemp);
-  tempSymbol.innerHTML = "°C";
+   event.preventDefault();
+   celsiusLink.classList.add("active");
+   fahrenheitLink.classList.remove("active");
+   let temperatureElement = document.querySelector("#current-temp");
+   let tempSymbol = document.querySelector("#symbol");
+   temperatureElement.innerHTML = Math.round(celsiusTemp);
+   tempSymbol.innerHTML = "°C";
 }
 let btnSearch = document.querySelector("#btn-search");
 let apiKey = "85bbd3d16a2dfe0ecf253c7ae1e8fe03";
@@ -222,7 +224,7 @@ let currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appi
 //let forecastUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 let fahrenheitLink = document.querySelector("#fah-link");
 let celsiusLink = document.querySelector("#cel-link");
-
+let celsiusTemp = null;
 
 getDay();
 getTime();
