@@ -70,7 +70,6 @@ function getCityName(response){
   cityName.innerHTML = response.data.name.toUpperCase();
 }
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHtml = '<div class="row">';
